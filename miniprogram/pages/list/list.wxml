@@ -1,0 +1,5 @@
+<!--pages/list/list.wxml-->
+<view class="list">
+    <VideoList list="{{list}}"></VideoList>
+    <view wx:if="{{notDataFlag}}" class="notData">没有更多数据了~~</view>
+</view>

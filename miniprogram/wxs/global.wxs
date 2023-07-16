@@ -1,0 +1,35 @@
+function getOrderTitle(isFinished, order, show = false) {
+    if (order == 0) {
+        return "暂无剧集"
+    } else if (isFinished) {
+        if (show) {
+            return "已完结,共" + order + "集"
+        } else {
+            return "已完结"
+        }
+    } else {
+        return "更新至第" + order + "集"
+    }
+}
+
+function getPlayTime(date = "", split = "-") {
+    var arr = date.split(split)
+    return arr[0] + "年" + arr[1] + "月" + arr[2] + "日"
+}
+
+function getTags(tags) {
+    if (tags) {
+        return tags.slice(0, 2)
+    }
+}
+
+function getVideoDescription(order, description) {
+    return "第" + order + "话 " + description
+}
+
+module.exports = {
+    getOrderTitle: getOrderTitle,
+    getPlayTime: getPlayTime,
+    getTags: getTags,
+    getVideoDescription: getVideoDescription
+}

@@ -1,0 +1,16 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/detail/detail",
+        "pages/list/list",
+        "pages/history/history",
+        "pages/search/search"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#eee",
+        "navigationBarTitleText": "XX动漫",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

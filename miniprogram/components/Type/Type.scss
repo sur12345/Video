@@ -1,0 +1,29 @@
+/* components/Type/Type.wxss */
+.type{
+    background-color: white;
+    margin: 20rpx 0;
+    padding: 20rpx 30rpx;
+    border-radius: 15rpx;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+    .top {
+        display: flex;
+        justify-content: space-between;
+        padding: 10rpx 0;
+    
+        .title{
+            color: rgb(255, 100, 20);
+            font-weight: 700;
+            font-size: 34rpx;
+        }
+
+        .watch {
+            font-size: 26rpx;
+            color: #999;
+        }
+    }
+
+    .bottom{
+        margin-top: 15rpx;
+    }
+}

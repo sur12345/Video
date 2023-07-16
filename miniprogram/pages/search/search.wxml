@@ -1,0 +1,21 @@
+<!--pages/search/search.wxml-->
+<view class="search">
+    <view class="search-container">
+        <icon class="icon" type="search" color="#999" />
+        <input value="{{value}}" bindinput="handleInput" bindconfirm="confirm" class="input" type="text" placeholder="请输入动画名称" confirm-type="search" />
+        <text hidden="{{value.length==0}}" bindtap="clearInput" class="iconfont icon-chacha"></text>
+    </view>
+    <view hidden="{{!searchStatus||searchHistory.length==0}}" class="searchHistory">
+        <view class="top">
+            <text class="title">最近搜索</text>
+            <text bindtap="deleteHistory" class="iconfont icon-shanchu"></text>
+        </view>
+        <view bindtap="search" data-name="{{item}}" class="search-li" wx:for="{{searchHistory}}" wx:key="index">
+            <text class="iconfont icon-lishijilu1"></text>
+            <text class="historyName">{{item}}</text>
+        </view>
+    </view>
+    <view hidden="{{searchStatus}}" style="margin: 10rpx 20rpx;">
+        <VideoList list="{{searchList}}"></VideoList>
+    </view>
+</view>

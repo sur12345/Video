@@ -1,0 +1,117 @@
+/* pages/history/history.wxss */
+.history {
+    height: 100vh;
+
+    .top {
+        height: 80rpx;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .deleteStatus {
+            padding: 5rpx 10rpx;
+            border-radius: 5rpx;
+            margin-right: 20rpx;
+        }
+    }
+
+    .videoList {
+        box-sizing: border-box;
+        padding: 20rpx;
+
+        .video-container {
+            display: flex;
+            margin: 0 0 20rpx;
+
+            .checkbox {
+                align-self: center;
+                margin: 0 10rpx;
+            }
+
+            .video {
+                display: flex;
+
+                .cover {
+                    width: 260rpx;
+                    height: 150rpx;
+                    border-radius: 10rpx;
+                }
+
+                .right {
+                    margin-left: 20rpx;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+
+                        .name {
+                            font-weight: bolder;
+                            font-size: 34rpx;
+                            line-height: 50rpx;
+                        }
+
+                        .description {
+                            font-size: 28rpx;
+                        }
+                    }
+
+                    .time {
+                        font-size: 26rpx;
+                        color: #999;
+                        display: flex;
+                        align-items: center;
+
+                        .iconfont {
+                            margin-right: 5rpx;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom {
+        height: 80rpx;
+        align-items: center;
+        border-top: 1px solid #ddd;
+        box-sizing: border-box;
+        background-color: white;
+
+        .radio-group {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 0 20rpx;
+
+            .radio {
+                display: flex;
+                align-items: center;
+            }
+
+            .text {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .empty {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .iconfont {
+            font-size: 200rpx;
+            margin-bottom: 150rpx;
+        }
+
+        .title {
+            font-size: 40rpx;
+        }
+    }
+}

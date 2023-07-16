@@ -1,0 +1,22 @@
+<!--components/Update/Update.wxml-->
+<wxs module="global" src="../../wxs/global.wxs"></wxs>
+<view class="update">
+    <view class="container" wx:for="{{list}}" wx:key="animation_id" bindtap="toDetail" data-index="{{index}}">
+        <view class="top">
+            <view class="left">
+                <view class="name">{{item.name}}</view>
+                <view class="tags">
+                    <text class="tag" wx:for="{{global.getTags(item.tags)}}" wx:key="tag_id">{{item.tag_name}}</text>
+                </view>
+            </view>
+            <view class="watch">{{global.getOrderTitle(item.isFinished,item.episodes)}}</view>
+        </view>
+        <view class="center">
+            <image class="cover" src="{{item.cover}}" />
+        </view>
+        <view class="bottom">
+            <text class="support_num">{{item.support_num}}人点赞</text>
+            <text class="score">{{item.score}}分</text>
+        </view>
+    </view>
+</view>

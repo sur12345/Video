@@ -1,0 +1,61 @@
+<view class="header-bg"></view>
+<view class="temp"></view>
+<view class="search-container">
+    <view class="search" bindtap="toSearch">
+        <text>想看什么来搜一下</text>
+        <icon type="search" />
+    </view>
+</view>
+<view class="user-card">
+    <view class="top-box">
+        <view class="left">
+            <image class="avatar" src="{{userInfo.avatarUrl}}" />
+            <text class="username">{{userInfo.nickName||"未登录"}}</text>
+        </view>
+        <view class="right">反馈</view>
+    </view>
+    <view class="bottom-box">
+        <view wx:if="{{login&&historyList.length!=0}}" class="historyList">
+            <view bindtap="toDetail" data-id="{{item.animation_id}}" wx:for="{{historyList}}" wx:key="animation_id" class="box">
+                <image class="cover" src="{{item.cover}}" mode="" />
+                <text class="name">{{item.name}}</text>
+            </view>
+            <view bindtap="watchHistory" class="seeHistory">
+                <view class="icon">
+                    <text class="iconfont icon-lishijilu"></text>
+                </view>
+                <text class="title">查看记录</text>
+            </view>
+        </view>
+        <view wx:if="{{login&&historyList.length==0}}" class="notHistory">
+            <text class="text">您当前还没有播放记录</text>
+            <view class="button" bindtap="watchHistory">查看历史记录</view>
+        </view>
+        <view wx:if="{{!login}}" class="notLogin">
+            <text class="text">登录查看播放记录</text>
+            <view bindtap="login" class="button">登录</view>
+        </view>
+        <view class="circle"></view>
+    </view>
+</view>
+<Tab model:name="{{name}}">
+    <TabItem label="推荐" name="recommend">
+        <view class="list-container">
+            <VideoList list="{{recommendList}}"></VideoList>
+        </view>
+        <view wx:if="{{!recommendFlag}}" class="notData">没有更多数据了~~</view>
+    </TabItem>
+    <TabItem label="分类" name="category">
+        <view style="background-color: white;overflow: hidden;">
+            <Category category="{{category}}"></Category>
+        </view>
+    </TabItem>
+    <TabItem label="排行" name="rank">
+        <view style="background-color: white;overflow: hidden;">
+            <Rank rank="{{rank}}"></Rank>
+        </view>
+    </TabItem>
+    <TabItem label="更新" name="update">
+        <Update list="{{updateList}}"></Update>
+    </TabItem>
+</Tab>

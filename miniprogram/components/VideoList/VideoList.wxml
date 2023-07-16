@@ -1,0 +1,4 @@
+<!--components/VideoList/VideoList.wxml-->
+<view class="video-list">
+    <VideoItem wx:for="{{list}}" video="{{item}}" wx:key="animation_id"></VideoItem>
+</view>

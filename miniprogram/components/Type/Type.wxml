@@ -1,0 +1,10 @@
+<!--components/Type/Type.wxml-->
+<view class="type">
+    <view class="top">
+        <text class="title">{{type}}</text>
+        <text class="watch">查看分类></text>
+    </view>
+    <view class="bottom">
+        <slot></slot>
+    </view>
+</view>

@@ -1,0 +1,42 @@
+<!--pages/history/history.wxml-->
+<wxs src="../../wxs/global.wxs" module="global"></wxs>
+<view class="history">
+    <block wx:if="{{videoList.length!=0}}">
+        <view class="top">
+            <text class="deleteStatus" bindtap="changeStatus">{{deleteStatus?"取消":"管理"}}</text>
+        </view>
+        <scroll-view style="height: {{deleteStatus?'calc(100% - 160rpx)':'calc(100% - 80rpx)'}};" class="videoList" scroll-y>
+            <checkbox-group bindchange="handleCheck">
+                <view wx:for="{{videoList}}" wx:key="animation_id" class="video-container">
+                    <checkbox hidden="{{!deleteStatus}}" class="checkbox" value="{{checkList[index].animation_id}}" checked="{{checkList[index].checked}}" />
+                    <view class="video" bindtap="handleClick" data-id="{{item.animation_id}}">
+                        <image class="cover" src="{{item.cover}}" mode="" />
+                        <view class="right">
+                            <view class="container">
+                                <text class="name">{{item.name}}</text>
+                                <text class="description">{{global.getVideoDescription(item.order,item.description)}}</text>
+                            </view>
+                            <view class="time">
+                                <text class="iconfont icon-shumashouji"></text>
+                                <text>{{item.timeFormat}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </checkbox-group>
+        </scroll-view>
+        <view style="display: {{deleteStatus?'flex':'none'}};" class="bottom">
+            <checkbox-group class="radio-group" bindchange="handleRadio">
+                <label class="video">
+                    <checkbox value="全选" checked="{{isAllCheck}}" />
+                    <text class="text">全选</text>
+                </label>
+                <text bindtap="deleteCheck" class="delete">删除</text>
+            </checkbox-group>
+        </view>
+    </block>
+    <view class="empty" wx:if="{{videoList.length==0}}">
+        <text class="iconfont icon-kongzhuangtai"></text>
+        <text class="title">暂无播放记录</text>
+    </view>
+</view>

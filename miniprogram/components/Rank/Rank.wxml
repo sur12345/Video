@@ -1,0 +1,6 @@
+<!--components/Rank/Rank.wxml-->
+<view class="rank">
+    <Type bindtap="handleClick" data-search="{{item.order}}" type="{{item.rankName}}" wx:for="{{rank}}" wx:key="index">
+        <VideoItem video="{{subItem}}" wx:for="{{item.animations}}" wx:key="animation_id"  wx:for-item="subItem" wx:for-index="subIndex" rankIndex="{{subIndex+1}}"></VideoItem>
+    </Type>
+</view>

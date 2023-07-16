@@ -1,0 +1,97 @@
+/* components/VideoItem/VideoItem.wxss */
+.video-item {
+    display: flex;
+    background-color: white;
+    max-height: 310rpx;
+    overflow: hidden;
+
+    .cover {
+        width: 200rpx;
+        height: 280rpx;
+        border-radius: 10rpx;
+        margin: 0 30rpx 15rpx 0;
+        flex-shrink: 0;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 230rpx);
+        box-sizing: border-box;
+        color: #999;
+        font-size: 26rpx;
+
+        .name {
+            margin-top: 30rpx;
+            font-size: 40rpx;
+            line-height: 60rpx;
+            color: black;
+        }
+
+        .center {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .updateOrEnd {
+                line-height: 36rpx;
+            }
+
+            .tags {
+                margin: 20rpx 0;
+
+                .tag {
+                    margin-right: 15rpx;
+                    padding: 2rpx 10rpx;
+                    border: 1px solid #999;
+                    border-radius: 8rpx;
+
+                    &:not(:last-of-type) {
+                        margin-right: 15rpx;
+                    }
+                }
+            }
+
+            .rank-index {
+                width: 65rpx;
+                height: 65rpx;
+                text-align: center;
+                line-height: 65rpx;
+                margin-right: 20rpx;
+                color: #666;
+                font-size: 26rpx;
+                background-color: #ddd;
+                border-radius: 50%;
+
+                &.active-1 {
+                    color: red;
+                    font-size: 26rpx;
+                    background-color: orange;
+                }
+
+                &.active-2 {
+                    color: #333;
+                    font-size: 26rpx;
+                    background-color: #999;
+                }
+
+                &.active-3 {
+                    color: orange;
+                    font-size: 26rpx;
+                    background-color: tomato;
+                }
+            }
+        }
+
+        .description {
+            width: 100%;
+            line-height: 36rpx;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+    }
+}

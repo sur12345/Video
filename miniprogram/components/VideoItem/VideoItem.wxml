@@ -1,0 +1,20 @@
+<!--components/VideoItem/VideoItem.wxml-->
+<wxs module="global" src="../../wxs/global.wxs"></wxs>
+<view class="video-item" catchtap="toDetail">
+    <image class="cover" src="{{video.cover}}" mode="" />
+    <view class="left">
+        <text class="name">{{video.name}}</text>
+        <view class="center">
+            <view>
+                <text class="updateOrEnd">{{global.getOrderTitle(video.isFinished,video.episodes,true)}}</text>
+                <view class="tags">
+                    <text class="tag" wx:for="{{global.getTags(video.tags)}}" wx:key="tag_id">{{item.tag_name}}</text>
+                </view>
+            </view>
+            <view wx:if="{{rankIndex}}" class="rank-index {{rankIndex<=3?'active-'+rankIndex:''}}">
+                {{rankIndex}}
+            </view>
+        </view>
+        <text class="description">{{video.description}}</text>
+    </view>
+</view>

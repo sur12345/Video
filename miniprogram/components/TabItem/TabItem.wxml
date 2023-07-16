@@ -1,0 +1,6 @@
+<!--components/TabItem/TabItem.wxml-->
+<view>
+    <view hidden="{{hidden}}">
+        <slot></slot>
+    </view>
+</view>

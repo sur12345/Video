@@ -1,0 +1,9 @@
+<!--components/Tab/Tab.wxml-->
+<view>
+    <scroll-view scroll-x enable-flex class="tab-header">
+        <view bindtap="handleClick" data-name="{{item.name}}" class="tab-item {{name==item.name?'active':''}}" wx:for="{{tabItems}}" wx:key="name">{{item.label}}</view>
+    </scroll-view>
+    <view class="tab-body">
+        <slot></slot>
+    </view>
+</view>

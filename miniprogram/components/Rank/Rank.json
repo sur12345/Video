@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "Type":"../Type/Type",
+        "VideoItem":"../VideoItem/VideoItem"
+    }
+}

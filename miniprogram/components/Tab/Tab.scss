@@ -1,0 +1,26 @@
+/* components/Tab/Tab.wxss */
+.tab-header {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    position: sticky;
+    top: 120rpx;
+    background-color: white;
+    z-index: 20;
+    color: #666;
+
+    .tab-item {
+        width: 25%;
+        height: 100%;
+        line-height: 80rpx;
+        text-align: center;
+        flex-shrink: 0;
+
+        &.active {
+            color: rgb(255, 100, 20);
+            font-size: 36rpx;
+            font-style: oblique;
+            font-weight: 900;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<!--components/Category/Category.wxml-->
+<view class="category">
+    <Type bindtap="handleClick" data-search="{{item.searchKey}}" type="{{item.categoryName}}" wx:for="{{category}}" wx:key="index" >
+        <view class="box">
+            <view class="left">
+                <text class="rank" data-index="{{subIndex+1}}" wx:for="{{item.animationNames}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="*this">{{subItem}}</text>
+            </view>
+            <view class="right">
+                <image class="cover" src="{{item.cover}}" mode="" />
+            </view>
+        </view>
+    </Type>
+</view>

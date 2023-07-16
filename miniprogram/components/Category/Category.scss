@@ -1,0 +1,32 @@
+/* components/Category/Category.wxss */
+.category{
+    padding: 0 30rpx;
+
+    .box{
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .rank{
+                font-size: 28rpx;
+
+                &::before {
+                    content: attr(data-index)". ";
+                    color: rgb(255, 100, 20);
+                    font-size: 26rpx;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .right .cover{
+            width: 220rpx;
+            height: 280rpx;
+            border-radius: 10rpx;
+        }
+    }
+}

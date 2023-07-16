@@ -1,0 +1,68 @@
+<!--pages/detail/detail.wxml-->
+<wxs module="global" src="../../wxs/global.wxs"></wxs>
+<view class="detail">
+    <video class="video" bindplay="videoPlay" bindended="videoEnd" autoplay enable-play-gesture show-screen-lock-button show-snapshot-button src="{{videoSrc}}" />
+    <view class="video_detail">
+        <view class="name">
+            {{animation.name}}
+        </view>
+        <view class="container" bindtap="openDetail">
+            <view class="left">
+                <text class="iconfont icon-shipinbofangliang"></text>
+                <text class="value play_num">{{animation.hot}}</text>
+                <text class="iconfont icon-dianzan"></text>
+                <text class="value support_num">{{animation.support_num}}</text>
+                <text class="value score">{{animation.score}}分</text>
+            </view>
+            <text class="right">详情></text>
+        </view>
+        <view class="episodes">
+            <view class="top">
+                <text class="select">选集</text>
+                <text>{{global.getOrderTitle(animation.isFinished,animation.episodes,true)}}</text>
+            </view>
+            <scroll-view class="bottom" scroll-x enable-flex>
+                <view data-index="{{index}}" bindtap="changeVideo" wx:for="{{animation.videos}}" wx:key="video_id" class="episode_box {{currentOrder==index+1?' active':''}}">
+                    <view class="episode">第{{index+1}}话</view>
+                    <view class="description">{{item.description}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view>
+            <view style="margin-bottom: 10rpx;">热门推荐</view>
+            <VideoList list="{{recommendList}}"></VideoList>
+        </view>
+    </view>
+    <scroll-view class="more_detail {{hidden?'hidden':'show'}}" scroll-y>
+        <view class="detail_top">
+            <text class="info">详情</text>
+            <text class="close" bindtap="closeDetail">关闭</text>
+        </view>
+        <view class="detail_bottom">
+            <view class="item">
+                <image class="cover" src="{{animation.cover}}" mode="" />
+                <view class="center">
+                    <text class="name">{{animation.name}}</text>
+                    <view class="base_detail">
+                        <text class="address">{{animation.address}}</text>
+                        <text class="play_time">{{global.getPlayTime(animation.play_time,"-")}}开播</text>
+                        <text class="updateOrEnd">最近更新{{global.getPlayTime(animation.update_time,"-")}}</text>
+                    </view>
+                </view>
+                <view class="score">
+                    {{animation.score}}
+                </view>
+            </view>
+            <view class="detail_tag">
+                <view class="tag_title">动画标签</view>
+                <view class="tags">
+                    <text class="tag" wx:for="{{animation.tags}}" wx:key="tag_id">{{item.tag_name}}</text>
+                </view>
+            </view>
+            <view class="detail_description">
+                <view class="description_title">简介</view>
+                <text class="description">{{animation.description}}</text>
+            </view>
+        </view>
+    </scroll-view>
+</view>

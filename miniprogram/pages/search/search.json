@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "VideoList": "../../components/VideoList/VideoList"
+    },
+    "navigationBarTitleText": "搜索"
+}

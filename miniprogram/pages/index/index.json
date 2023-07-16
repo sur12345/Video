@@ -1,0 +1,11 @@
+{
+    "usingComponents": {
+        "Tab": "../../components/Tab/Tab",
+        "TabItem": "../../components/TabItem/TabItem",
+        "VideoList": "../../components/VideoList/VideoList",
+        "Category": "../../components/Category/Category",
+        "Rank": "../../components/Rank/Rank",
+        "Update": "../../components/Update/Update"
+    },
+    "onReachBottomDistance": 50
+}
