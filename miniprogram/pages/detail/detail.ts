@@ -42,17 +42,11 @@ Page({
             currentOrder: e.currentTarget.dataset.index + 1,
             videoSrc: this.data.animation.videos[e.currentTarget.dataset.index].play_address
         })
+        this.addHistory()
     },
 
     videoPlay() {
-        const { animation_id, cover, name, videos } = this.data.animation
-        addPlayHistory({
-            animation_id,
-            cover,
-            order: this.data.currentOrder,
-            name,
-            description: videos[this.data.currentOrder - 1].description
-        })
+        this.addHistory()
     },
 
     videoEnd() {
@@ -85,6 +79,17 @@ Page({
             return item.order
         }
         return 1
+    },
+
+    addHistory() {
+        const { animation_id, cover, name, videos } = this.data.animation
+        addPlayHistory({
+            animation_id,
+            cover,
+            order: this.data.currentOrder,
+            name,
+            description: videos[this.data.currentOrder - 1].description
+        })
     },
 
     onLoad(query: any) {
